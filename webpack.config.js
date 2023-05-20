@@ -2,15 +2,19 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/index.js',
+  devtool: 'inline-source-map',
+  devServer: {
+    static: './dist',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
     //这里用 hash 的用途是便于添加缓存。缓存是HTTP协议里规定的。
   },
   plugins: [new HtmlWebpackPlugin({
-    title: '学习webpack',
+    title: 'Development',
     template: 'src/assets/index.html'
   })],
   module: {
