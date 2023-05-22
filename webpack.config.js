@@ -1,22 +1,17 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+//开发环境下使用这个文件。
+//主要是区别引入CSS的方式，这里是利用JS生成style
+
+
+
+const base = require('./webpack.config.base.js')
 
 module.exports = {
+  ...base,
   mode: 'development',
-  entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
   },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js',
-    //这里用 hash 的用途是便于添加缓存。缓存是HTTP协议里规定的。
-  },
-  plugins: [new HtmlWebpackPlugin({
-    title: 'Development',
-    template: 'src/assets/index.html'
-  })],
   module: {
     rules: [
       {
