@@ -1,4 +1,4 @@
-c = yellow;
-bady{
+c = gray;
+body{
   background: c;
 }
