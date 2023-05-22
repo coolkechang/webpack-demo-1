@@ -1,0 +1,4 @@
+c = yellow;
+bady{
+  background: c;
+}

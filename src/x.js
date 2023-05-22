@@ -1,2 +1,5 @@
 import './x.css'
+import './y.scss'
+import './z.less'
+import './w.stylus'
 export default 'xxx'
